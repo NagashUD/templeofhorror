@@ -24,7 +24,10 @@
     nightmares: [
        { src: "assets/images_galeries/nightmares/1000031232.png" },
     { src: "assets/images_galeries/nightmares/1000031244.jpg" },
-     { src: "assets/images_galeries/nightmares/1000031495.jpg" }
+     { src: "assets/images_galeries/nightmares/1000031495.jpg" },
+    { src: "assets/images_galeries/nightmares/1000031077.jpg" }
+
+
     ]
   };
   const galleryNames = { occult: 'Occult', creatures: 'Creatures', medical: 'Medical', aquatic: 'Aquatic', nightmares: 'Nightmares' };
