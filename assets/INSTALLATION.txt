@@ -1,0 +1,21 @@
+VEENADEV — Signature automatique des images
+
+1. Installer Python 3 si nécessaire.
+2. Dans un terminal : py -m pip install Pillow
+   (ou : python -m pip install Pillow)
+3. Placer les images dans images_originales/occult/, creatures/, medical/,
+   aquatic/ ou nightmares/. Les sous-dossiers sont facultatifs.
+4. Double-cliquer sur lancer_windows.bat sous Windows,
+   ou exécuter : python watermark.py
+5. Récupérer les images signées dans images_galeries/.
+
+Les originaux ne sont jamais modifiés.
+Les JPG, PNG et WebP sont pris en charge.
+
+Réglages dans watermark.py :
+TEXT : signature affichée
+OPACITY : transparence (0 à 255)
+SIZE_RATIO : taille de la signature
+MARGIN_RATIO : distance aux bords
+
+Facultatif : placer une police TrueType nommée police.ttf à côté du script.

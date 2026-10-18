@@ -1,0 +1,604 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=EB+Garamond:wght@400;500&display=swap');
+:root {
+    color-scheme:dark;
+    --gold:#cba47c;
+    --pale:#e5d8ca;
+    --background:#07090b
+}
+
+* {
+    box-sizing:border-box
+}
+
+html {
+    scroll-behavior:smooth
+}
+
+body {
+    margin:0;
+    background:radial-gradient(ellipse at 50% 30%,#152029 0%,var(--background) 66%);
+    color:var(--pale);
+    font-family:'EB Garamond',Georgia,serif;
+    font-size:18px
+}
+
+button,a {
+    font:inherit
+}
+
+button {
+    cursor:pointer
+}
+
+a {
+    color:inherit;
+    text-decoration:none
+}
+
+a:focus-visible,button:focus-visible {
+    outline:2px solid #f6c88e;
+    outline-offset:5px
+}
+
+[hidden] {
+    display:none!important
+}
+
+.site-header {
+    height:125px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px clamp(20px,5vw,80px);
+    gap:24px;
+    position:relative;
+    z-index:2;
+    background:linear-gradient(#050607,#080b0d)
+}
+
+.brand {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
+    line-height:.92;
+    color:#e2b58b;
+    font-family:Cinzel,Georgia,serif;
+    letter-spacing:.07em;
+    font-size:clamp(18px,2.5vw,34px)
+}
+
+.brand small {
+    font-size:12px;
+    letter-spacing:.3em;
+    margin:4px 0
+}
+
+.brand strong {
+    font-weight:500;
+    color:#b85b39;
+    font-size:1.3em
+}
+
+.main-nav {
+    display:flex;
+    gap:clamp(14px,3vw,42px);
+    align-items:center
+}
+
+.main-nav a,.site-footer nav a {
+    font:12px Cinzel,Georgia,serif;
+    letter-spacing:.07em;
+    transition:color .2s
+}
+
+.main-nav a:hover,.main-nav a.active,.site-footer a:hover {
+    color:#e6b487
+}
+
+.motto {
+    text-align:center;
+    font:12px/1.25 Cinzel,Georgia,serif;
+    letter-spacing:.18em;
+    color:#a69a91
+}
+
+.menu-toggle {
+    display:none;
+    background:none;
+    border:1px solid #73573c;
+    color:var(--pale);
+    padding:5px 12px
+}
+
+.temple-stage {
+    width:100%;
+    overflow:hidden
+}
+
+.hall {
+    border: 2px solid #8b6a3e;
+    box-shadow: 0 0 12px rgba(180, 130, 65, 0.25);
+    position:relative;
+    max-width:1648px;
+    margin:0 auto;
+    line-height:0
+}
+
+.hall-image {
+    display:block;
+    width:100%;
+    height:auto
+}
+
+.door-grid {
+    position:absolute;
+    left:1.5%;
+    right:1.5%;
+    top:15%;
+    height:57%;
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    gap:1.5%
+}
+
+.door {
+    border:0;
+    position:relative;
+    min-width:0;
+    background:transparent;
+    color:#f2e6d8;
+    line-height:1.2;
+    isolation:isolate
+}
+
+.door:before {
+    content:"";
+    position:absolute;
+    inset:3% 1% 2%;
+    border-radius:48% 48% 5% 5% / 18% 18% 3% 3%;
+    background:radial-gradient(ellipse at 50% 60%,rgba(var(--door-color),.33),transparent 67%);
+    box-shadow:inset 0 0 35px rgba(var(--door-color),.0),0 0 0 rgba(var(--door-color),0);
+    opacity:0;
+    transition:opacity .35s,box-shadow .35s;
+    z-index:-1
+}
+
+.door:hover:before,.door:focus-visible:before {
+    opacity:1;
+    box-shadow:inset 0 0 32px rgba(var(--door-color),.28),0 0 25px rgba(var(--door-color),.12)
+}
+
+.door-content {
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:7%;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:14px
+}
+
+.door-title {
+    font:clamp(10px,1.8vw,25px) Cinzel,Georgia,serif;
+    text-shadow:0 2px 8px #000,0 0 14px #000
+}
+
+.door-enter {
+    border:1px solid #b18b67;
+    border-radius:3px;
+    padding:6px 16px;
+    background:rgba(0,0,0,.62);
+    font:clamp(9px,1vw,13px) Cinzel,Georgia,serif;
+    letter-spacing:.08em;
+    transition:background .25s,transform .25s
+}
+
+.door:hover .door-enter {
+    background:rgba(var(--door-color),.5);
+    transform:translateY(-2px)
+}
+
+.intro {
+    text-align:center;
+    padding:55px 20px 38px
+}
+
+.intro h1 {
+    font:clamp(27px,4vw,51px)/1.2 Cinzel,Georgia,serif;
+    letter-spacing:.23em;
+    font-weight:400;
+    margin:10px 0
+}
+
+.intro p {
+    letter-spacing:.17em;
+    text-transform:uppercase;
+    color:#aaa19a
+}
+
+.eyebrow {
+    font:12px Cinzel,Georgia,serif;
+    letter-spacing:.18em;
+    color:#c9a078
+}
+
+.ornament {
+    display:block;
+    color:#bc8757;
+    font-size:27px;
+    margin-top:25px
+}
+
+.feature-grid {
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    max-width:1340px;
+    margin:0 auto 70px;
+    padding:0 25px
+}
+
+.feature-card {
+    border:1px solid #594735;
+    background:linear-gradient(145deg,rgba(15,17,19,.98),rgba(3,5,6,.95));
+    min-height:240px;
+    padding:26px 28px
+}
+
+.feature-card h2 {
+    font:18px Cinzel,Georgia,serif;
+    letter-spacing:.08em;
+    color:#d1a47a;
+    margin:0 0 14px
+}
+
+.feature-card p {
+    margin:0 0 16px;
+    color:#b9ada4
+}
+
+.feature-card .muted {
+    color:#817b77;
+    font-size:15px
+}
+
+.art-previews {
+    display:flex;
+    gap:10px;
+    margin:20px 0
+}
+
+.art-preview {
+    flex:1;
+    aspect-ratio:1.3;
+    background:radial-gradient(circle,#34404a,#080b0e 70%);
+    border:1px solid #544b45;
+    display:grid;
+    place-items:center;
+    color:#9a8c7b;
+    font-size:25px
+}
+
+.gold-button {
+    display:inline-block;
+    background:transparent;
+    color:#e4c4a0;
+    border:1px solid #b18b67;
+    padding:10px 19px;
+    font:12px Cinzel,Georgia,serif;
+    letter-spacing:.06em;
+    transition:background .2s
+}
+
+.gold-button:hover {
+    background:#523620
+}
+
+.music-placeholder {
+    display:flex;
+    align-items:center;
+    gap:12px;
+    background:#111619;
+    border:1px solid #25292b;
+    padding:17px 12px;
+    margin:25px 0;
+    color:#b7aba0;
+    font-size:16px
+}
+
+.music-placeholder span:first-child {
+    font-size:26px
+}
+
+.site-footer {
+    border-top:1px solid #68503a;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:27px 5%;
+    font:14px Cinzel,Georgia,serif;
+    color:#b69c85
+}
+
+.site-footer nav {
+    display:flex;
+    gap:20px
+}
+
+.age-gate,.gallery-overlay {
+    position:fixed;
+    inset:0;
+    z-index:20;
+    background:rgba(1,2,3,.96);
+    display:grid;
+    place-items:center;
+    padding:22px
+}
+
+.age-card,.gallery-panel {
+    width:min(100%,570px);
+    border:1px solid #735438;
+    background:radial-gradient(circle at top,#1d1a18,#090a0c 75%);
+    padding:clamp(26px,5vw,60px);
+    text-align:center;
+    box-shadow:0 0 90px #000
+}
+
+.age-card h1,.gallery-panel h2 {
+    font:clamp(25px,5vw,43px) Cinzel,Georgia,serif;
+    color:#d5a87f;
+    font-weight:400
+}
+
+.age-card p,.gallery-panel p {
+    line-height:1.6;
+    color:#c0b2a7
+}
+
+.sigil {
+    font-size:45px;
+    color:#bc895a
+}
+
+.age-actions {
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    align-items:center;
+    margin-top:30px
+}
+
+.text-button {
+    border:0;
+    background:transparent;
+    color:#a89b91;
+    font:12px Cinzel,Georgia,serif
+}
+
+.gallery-overlay {
+    z-index:15
+}
+
+.gallery-panel {
+    position:relative
+}
+
+.gallery-close {
+    position:absolute;
+    right:15px;
+    top:13px;
+    border:0;
+    background:none;
+    color:#e3c6a5;
+    font-size:23px
+}
+
+.gallery-rule {
+    height:1px;
+    background:linear-gradient(90deg,transparent,#9e7853,transparent);
+    margin:25px 0
+}
+
+.gallery-items {
+    margin:25px 0
+}
+
+.menu-toggle:hover,.text-button:hover {
+    color:#e4bb8d
+}
+
+@media(max-width:800px) {
+    .site-header {
+        height:auto;
+        min-height:95px
+    }
+    .motto {
+        display:none
+    }
+    .menu-toggle {
+        display:block;
+        margin-left:auto
+    }
+    .main-nav {
+        display:none;
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        flex-direction:column;
+        background:#0a0b0d;
+        border-bottom:1px solid #594735;
+        padding:20px
+    }
+    .main-nav.open {
+        display:flex
+    }
+    .door-grid {
+        top:14%;
+        height:61%
+    }
+    .door-content {
+        bottom:1%;
+        gap:6px
+    }
+    .door-enter {
+        padding:4px 5px
+    }
+    .feature-grid {
+        grid-template-columns:1fr;
+        max-width:560px
+    }
+    .site-footer {
+        flex-direction:column;
+        text-align:center
+    }
+    .site-footer nav {
+        flex-wrap:wrap;
+        justify-content:center
+    }
+}
+
+@media(max-width:520px) {
+    .hall {
+        width:760px;
+        max-width:none;
+        left:50%;
+        transform:translateX(-50%)
+    }
+    .door-title {
+        font-size:13px
+    }
+    .door-enter {
+        font-size:9px
+    }
+    .intro {
+        padding-top:35px
+    }
+    .intro h1 {
+        letter-spacing:.1em
+    }
+    .age-actions {
+        flex-direction:column
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    html {
+        scroll-behavior:auto
+    }
+    *,*:before,*:after {
+        transition:none!important;
+        animation:none!important
+    }
+}
+/* Lecteur musical - Navigation */
+
+#music-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 25px;
+
+    padding: 0;
+    margin-left: 8px;
+
+    background: rgba(10, 8, 7, 0.45);
+    border: 1px solid #8b6a3e;
+    border-radius: 3px;
+
+    color: #cba47c;
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#music-toggle:hover {
+    background: rgba(139, 106, 62, 0.2);
+    border-color: #d6ac79;
+    color: #f1d2a8;
+    box-shadow: 0 0 8px rgba(203, 164, 124, 0.25);
+}
+
+#music-toggle.playing {
+    color: #f1d2a8;
+    border-color: #d6ac79;
+    box-shadow: 0 0 6px rgba(203, 164, 124, 0.3);
+}
+
+/* Tina-style gallery viewer — Temple edition */
+.gallery-overlay { overflow-y: auto; }
+.gallery-viewer { width: min(96vw, 1120px); max-height: 94vh; overflow-y: auto; padding: 28px clamp(15px, 3vw, 36px); }
+.gallery-viewer h2 { margin: 7px 0 12px; }
+.gallery-viewer .gallery-rule { margin: 12px 0 18px; }
+.viewer-stage { display: grid; grid-template-columns: 46px minmax(0, 1fr) 46px; align-items: center; gap: 10px; }
+.viewer-image-button { display: flex; justify-content: center; align-items: center; background: #050607; border: 1px solid #463727; padding: 0; min-height: 200px; cursor: zoom-in; }
+.viewer-image-button img { display: block; max-width: 100%; max-height: min(53vh, 620px); object-fit: contain; }
+.viewer-arrow { background: rgba(0,0,0,.5); border: 1px solid #604a36; color: #e4c4a0; height: 52px; font-size: 24px; }
+.viewer-arrow:hover { background: #382719; }
+.viewer-arrow:disabled { opacity: .3; cursor: default; }
+.viewer-details { display: flex; justify-content: space-between; gap: 15px; margin: 12px 56px; text-align: left; color: #d5c2b0; font-size: 16px; }
+#gallery-count { color: var(--gold); white-space: nowrap; }
+.viewer-thumbs { display: flex; gap: 10px; overflow-x: auto; padding: 8px 4px 14px; margin: 12px 56px 20px; }
+.viewer-thumb { flex: 0 0 110px; width: 110px; height: 72px; padding: 0; border: 2px solid #403328; background: #07090b; opacity: .7; }
+.viewer-thumb.active, .viewer-thumb:hover { border-color: #cba47c; opacity: 1; }
+.viewer-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.viewer-empty { margin: 30px auto; }
+.image-lightbox { position: fixed; inset: 0; z-index: 30; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.97); padding: 36px 20px; }
+.image-lightbox img { max-width: 100%; max-height: 94vh; object-fit: contain; cursor: zoom-out; }
+.lightbox-close { position: absolute; top: 14px; right: 20px; border: 0; background: none; color: #e4c4a0; font-size: 30px; z-index: 1; }
+@media (max-width: 600px) {
+  .gallery-viewer { padding: 20px 12px; }
+  .viewer-stage { grid-template-columns: 28px minmax(0,1fr) 28px; gap: 3px; }
+  .viewer-arrow { height: 42px; font-size: 17px; }
+  .viewer-details, .viewer-thumbs { margin-left: 31px; margin-right: 31px; }
+  .viewer-thumb { flex-basis: 75px; width: 75px; height: 55px; }
+}
+
+/* =========================================================
+   FLOOR MIST — TEMPLE HALL
+   Réglages rapides : --mist-opacity et --mist-speed.
+   0 = invisible ; 0.10 = très léger ; 0.20 = plus visible.
+   ========================================================= */
+.hall {
+    --mist-opacity: 0.50;
+    --mist-speed: 1.0s;
+       overflow: hidden;
+}
+
+/* La brume reste au-dessus de l'image, mais sous les portes. */
+.hall::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    left: -8%;
+    right: -8%;
+    bottom: 0;
+    height: 27%;
+    opacity: var(--mist-opacity);
+    background:
+        radial-gradient(ellipse 42% 58% at 17% 95%, #dce7ed 0%, transparent 82%),
+        radial-gradient(ellipse 38% 66% at 53% 91%, #b9c9d2 0%, transparent 84%),
+        radial-gradient(ellipse 44% 54% at 85% 98%, #e1e7e8 0%, transparent 82%);
+    filter: blur(24px);
+    transform: translateX(-2%);
+    animation: temple-floor-mist var(--mist-speed) ease-in-out infinite alternate;
+}
+
+.hall .door-grid {
+    z-index: 2;
+}
+
+@keyframes temple-floor-mist {
+    from { transform: translateX(-2%) scaleY(0.96); }
+    to   { transform: translateX(2%) scaleY(1.04); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hall::after { animation: none; }
+}

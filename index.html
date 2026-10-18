@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="Temple of Horror — an immersive collection of unsettling digital art, film and sound.">
+  <title>Temple of Horror — Explore Dark Worlds</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <div id="age-gate" class="age-gate" role="dialog" aria-modal="true" aria-labelledby="age-title" hidden>
+    <div class="age-card">
+      <div class="sigil" aria-hidden="true">✧</div>
+      <p class="eyebrow">A WARNING BEFORE ENTRY</p>
+      <h1 id="age-title">Temple of Horror</h1>
+      <p>This fictional art collection may contain disturbing imagery, graphic horror and occasional nudity. Entry is intended for adults aged 18 or over.</p>
+      <div class="age-actions"><button id="age-enter" class="gold-button">I AM 18+ · ENTER</button><button id="age-leave" class="text-button">LEAVE</button></div>
+    </div>
+  </div>
+
+  <header class="site-header" id="home">
+    <a class="brand" href="#home" aria-label="Temple of Horror home"><span>TEMPLE</span><small>OF</small><strong>HORROR</strong></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle navigation">☰</button>
+    <nav id="main-nav" class="main-nav" aria-label="Main navigation"><a class="active" href="#home">HOME</a><a href="#galleries">GALLERIES</a><a href="#music">MUSIC</a><a href="#about">ABOUT</a><a href="mailto:contact@example.com" class="contact-link">CONTACT</a><button id="music-toggle" aria-label="Play ambient music">
+    ♪
+</button>
+
+<audio id="ambient-audio" loop>
+    <source src="assets/audio/templehorror.mp3"
+            type="audio/mpeg">
+</audio>
+</nav>
+    <div class="motto">ART<br>BEYOND<br>REALITY</div>
+  </header>
+
+  <main>
+    <section class="temple-stage" aria-label="The six wings of the Temple">
+      <div class="hall" id="galleries">
+        <img src="assets/temple-hall.png" alt="Six luminous gothic archways in a dark cathedral" class="hall-image">
+        <div class="door-grid">
+          <button class="door" data-gallery="occult" style="--door-color: 190, 32, 27" aria-label="Enter Occult gallery"><span class="door-content"><span class="door-title">Occult</span><span class="door-enter">ENTER</span></span></button>
+          <button class="door" data-gallery="creatures" style="--door-color: 61, 176, 113" aria-label="Enter Creatures gallery"><span class="door-content"><span class="door-title">Creatures</span><span class="door-enter">ENTER</span></span></button>
+          <button class="door" data-gallery="medical" style="--door-color: 93, 171, 216" aria-label="Enter Medical gallery"><span class="door-content"><span class="door-title">Medical</span><span class="door-enter">ENTER</span></span></button>
+          <button class="door" data-gallery="aquatic" style="--door-color: 233, 159, 72" aria-label="Enter Aquatic gallery"><span class="door-content"><span class="door-title">Aquatic</span><span class="door-enter">ENTER</span></span></button>
+          <button class="door" data-gallery="nightmares" style="--door-color: 164, 100, 234" aria-label="Enter Nightmares gallery"><span class="door-content"><span class="door-title">Nightmares</span><span class="door-enter">ENTER</span></span></button>
+          <button class="door" data-gallery="music" style="--door-color: 232, 153, 57" aria-label="Enter Music section"><span class="door-content"><span class="door-title">Music</span><span class="door-enter">ENTER</span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" aria-labelledby="intro-title"><p class="eyebrow">A COLLECTION OF IMAGES, VIDEOS AND SOUNDS</p><h1 id="intro-title">EXPLORE<br>DARK WORLDS</h1><p>Inspired by the shadows</p><span class="ornament" aria-hidden="true">✧</span></section>
+
+    <section class="feature-grid" aria-label="Discover the Temple">
+      <article class="feature-card" id="latest"><h2>LATEST WORKS</h2><div class="art-previews"><div class="art-preview">✦</div><div class="art-preview">☾</div><div class="art-preview">✧</div></div><p class="muted">The collection is being prepared.</p><a class="gold-button" href="#galleries">VIEW GALLERIES</a></article>
+      <article class="feature-card" id="music"><h2>AMBIENT MUSIC</h2><p>Set the mood for your journey.</p><div class="music-placeholder"><span aria-hidden="true">♫</span><span>SoundCloud player coming soon</span></div><p class="muted">Music plays only when you choose.</p></article>
+      <article class="feature-card" id="about"><h2>ABOUT THE PROJECT</h2><p>Temple of Horror is a personal artistic universe mixing AI imagery, digital art, video and music, inspired by the strange, the dark and the unknown.</p><p class="muted">An independent creative project by VeenaDev.</p></article>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>Temple of Horror</span><nav aria-label="Footer navigation"><a href="#home">HOME</a><a href="#galleries">GALLERIES</a><a href="#music">MUSIC</a><a href="#about">ABOUT</a></nav><span>© <span id="year"></span></span></footer>
+
+  <div class="gallery-overlay" id="gallery-overlay" role="dialog" aria-modal="true" aria-labelledby="gallery-title" hidden>
+    <div class="gallery-panel gallery-viewer">
+      <button id="gallery-close" class="gallery-close" aria-label="Close gallery">✕</button>
+      <p class="eyebrow">TEMPLE OF HORROR · GALLERY</p>
+      <h2 id="gallery-title"></h2>
+      <div class="gallery-rule"></div>
+      <div class="viewer-stage">
+        <button class="viewer-arrow" id="gallery-prev" aria-label="Previous artwork">❮</button>
+        <button class="viewer-image-button" id="gallery-zoom" aria-label="Enlarge artwork"><img id="gallery-image" alt=""></button>
+        <button class="viewer-arrow" id="gallery-next" aria-label="Next artwork">❯</button>
+      </div>
+      <div class="viewer-details"><span id="gallery-caption"></span><span id="gallery-count"></span></div>
+      <div class="viewer-thumbs" id="gallery-items" aria-label="Artwork thumbnails"></div>
+      <p class="viewer-empty" id="gallery-empty" hidden>No artworks in this gallery yet.</p>
+      <button id="gallery-back" class="gold-button">RETURN TO THE TEMPLE</button>
+    </div>
+  </div>
+  <div id="image-lightbox" class="image-lightbox" role="dialog" aria-modal="true" aria-label="Enlarged artwork" hidden>
+    <button id="lightbox-close" class="lightbox-close" aria-label="Close enlarged artwork">✕</button>
+    <img id="lightbox-image" alt="" title="Click to return to gallery">
+  </div>
+</body>
+</html>
