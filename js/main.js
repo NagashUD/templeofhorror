@@ -6,25 +6,25 @@
   const demoImage = 'assets/temple-hall.png';
   const artworks = {
     occult: [
-        { src: "images_galeries/occult/image01.webp" },
-    { src: "images_galeries/occult/image02.webp" }
+        { src: "assets/images_galeries/occult/image01.webp" },
+    { src: "assets/images_galeries/occult/image02.webp" }
     ],
     creatures: [
-        { src: "images_galeries/creatures/1000031494.jpg" },
-    { src: "images_galeries/creatures/image02.webp" }
+        { src: "assets/images_galeries/creatures/1000031494.jpg" },
+    { src: "assets/images_galeries/creatures/image02.webp" }
     ],
     medical: [
-       { src: "images_galeries/medical/1000031491.jpg" },
-    { src: "images_galeries/medical/1000031493.jpg" }
+       { src: "assets/images_galeries/medical/1000031491.jpg" },
+    { src: "assets/images_galeries/medical/1000031493.jpg" }
     ],
     aquatic: [
-        { src: "images_galeries/aquatic/1000031496.jpg" },
-    { src: "images_galeries/aquatic/image02.webp" }
+        { src: "assets/images_galeries/aquatic/1000031496.jpg" },
+    { src: "assets/images_galeries/aquatic/image02.webp" }
     ],
     nightmares: [
-       { src: "images_galeries/nightmares/1000031232.png" },
-    { src: "images_galeries/nightmares/1000031244.jpg" },
-     { src: "images_galeries/nightmares/1000031495.jpg" }
+       { src: "assets/images_galeries/nightmares/1000031232.png" },
+    { src: "assets/images_galeries/nightmares/1000031244.jpg" },
+     { src: "assets/images_galeries/nightmares/1000031495.jpg" }
     ]
   };
   const galleryNames = { occult: 'Occult', creatures: 'Creatures', medical: 'Medical', aquatic: 'Aquatic', nightmares: 'Nightmares' };
