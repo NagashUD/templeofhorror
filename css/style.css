@@ -630,3 +630,7 @@ a:focus-visible,button:focus-visible {
     inset: 0;
     z-index: 2000;
 }
+
+.image-lightbox {
+    z-index: 3000;
+}
