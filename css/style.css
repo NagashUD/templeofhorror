@@ -602,3 +602,18 @@ a:focus-visible,button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
     .hall::after { animation: none; }
 }
+@media (max-width: 768px) {
+
+    .temple-stage {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .hall {
+        min-width: 760px;
+        margin: 0;
+    }
+
+}
