@@ -6,7 +6,7 @@
   const demoImage = 'assets/temple-hall.png';
   const artworks = {
     occult: [
-        { src: "assets/images_galeries/occult/image01.webp" },
+        { src: "assets/images_galeries/occult/1000031507.jpg" },
     { src: "assets/images_galeries/occult/image02.webp" }
     ],
     creatures: [
