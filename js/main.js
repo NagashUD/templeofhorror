@@ -30,7 +30,7 @@
 
     ]
   };
-  const galleryNames = { occult: 'Occult', creatures: 'Creatures', medical: 'Medical', aquatic: 'Aquatic', nightmares: 'Nightmares' };
+  const galleryNames = { occult: 'Occult', creatures: 'Creatures', medical: 'Medical', aquatic: 'Aquatic', nightmares: 'Nightmares', music: 'Music' };
   const $ = selector => document.querySelector(selector);
   const gate = $('#age-gate');
   const overlay = $('#gallery-overlay');
@@ -52,7 +52,36 @@
   });
   $('#age-leave').addEventListener('click', () => { window.location.href = 'about:blank'; });
 
+  // The Music doorway uses the existing gallery modal, without an extra HTML page.
+  const musicPanel = document.createElement('div');
+  musicPanel.id = 'temple-soundcloud';
+  musicPanel.hidden = true;
+  musicPanel.style.cssText = 'width:100%;max-width:850px;margin:22px auto 30px;';
+  const musicFrame = document.createElement('iframe');
+  musicFrame.title = 'Temple Of Horror — Nagash Carstein on SoundCloud';
+  musicFrame.width = '100%';
+  musicFrame.height = '300';
+  musicFrame.setAttribute('scrolling', 'no');
+  musicFrame.setAttribute('frameborder', '0');
+  musicFrame.setAttribute('allow', 'autoplay; encrypted-media');
+  musicFrame.style.cssText = 'display:block;width:100%;border:1px solid #8b6a3e;';
+  const soundcloudSrc = 'https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2421359142&color=%23cba47c&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true';
+  musicPanel.append(musicFrame);
+  const galleryBack = $('#gallery-back');
+  galleryBack.parentNode.insertBefore(musicPanel, galleryBack);
+
   function renderGallery() {
+    const isMusic = currentGallery === 'music';
+    musicPanel.hidden = !isMusic;
+    if (isMusic) {
+      $('.viewer-stage').hidden = true;
+      $('.viewer-details').hidden = true;
+      $('#gallery-items').hidden = true;
+      $('#gallery-empty').hidden = true;
+      $('#gallery-items').replaceChildren();
+      musicFrame.src = soundcloudSrc;
+      return;
+    }
     const works = artworks[currentGallery] || [];
     const hasWorks = works.length > 0;
     $('.viewer-stage').hidden = !hasWorks;
@@ -97,6 +126,7 @@
   }
   function closeGallery() {
     if (!lightbox.hidden) closeZoom();
+    if (currentGallery === 'music') musicFrame.removeAttribute('src'); // stop SoundCloud on close
     overlay.hidden = true;
     document.body.style.overflow = '';
     lastFocus?.focus();
@@ -123,10 +153,6 @@
   document.querySelectorAll('.door').forEach(door => {
     door.addEventListener('click', () => {
       const key = door.dataset.gallery;
-      if (key === 'music') {
-        $('#music').scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
       openGallery(key, door);
     });
   });
