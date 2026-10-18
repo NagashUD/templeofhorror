@@ -6,19 +6,25 @@
   const demoImage = 'assets/temple-hall.png';
   const artworks = {
     occult: [
-      { src: demoImage, title: 'Occult — demonstration' }
+        { src: "images_galeries/occult/image01.webp" },
+    { src: "images_galeries/occult/image02.webp" }
     ],
     creatures: [
-      { src: demoImage, title: 'Creatures — demonstration' }
+        { src: "images_galeries/creatures/1000031494.jpg" },
+    { src: "images_galeries/creatures/image02.webp" }
     ],
     medical: [
-      { src: demoImage, title: 'Medical — demonstration' }
+       { src: "images_galeries/medical/1000031491.jpg" },
+    { src: "images_galeries/medical/1000031493.jpg" }
     ],
     aquatic: [
-      { src: demoImage, title: 'Aquatic — demonstration' }
+        { src: "images_galeries/aquatic/1000031496.jpg" },
+    { src: "images_galeries/aquatic/image02.webp" }
     ],
     nightmares: [
-      { src: demoImage, title: 'Nightmares — demonstration' }
+       { src: "images_galeries/nightmares/1000031232.png" },
+    { src: "images_galeries/nightmares/1000031244.jpg" },
+     { src: "images_galeries/nightmares/1000031495.jpg" }
     ]
   };
   const galleryNames = { occult: 'Occult', creatures: 'Creatures', medical: 'Medical', aquatic: 'Aquatic', nightmares: 'Nightmares' };
