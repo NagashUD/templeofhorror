@@ -7,11 +7,16 @@
   const artworks = {
     occult: [
         { src: "assets/images_galeries/occult/1000031507.jpg" },
-    { src: "assets/images_galeries/occult/image02.webp" }
+    { src: "assets/images_galeries/occult/1000031519.jpg" },
+    { src: "assets/images_galeries/occult/1000031531.jpg" },
+    { src: "assets/images_galeries/occult/1000031532.jpg" }
     ],
     creatures: [
         { src: "assets/images_galeries/creatures/1000031494.jpg" },
-    { src: "assets/images_galeries/creatures/image02.webp" }
+    { src: "assets/images_galeries/creatures/1000031514.jpg" },
+    { src: "assets/images_galeries/creatures/1000032153.jpg" },
+    { src: "assets/images_galeries/creatures/1000032160.jpg" },
+    { src: "assets/images_galeries/creatures/1000032175.jpg" }
     ],
     medical: [
        { src: "assets/images_galeries/medical/1000031491.jpg" },
@@ -25,6 +30,7 @@
        { src: "assets/images_galeries/nightmares/1000031232.png" },
     { src: "assets/images_galeries/nightmares/1000031244.jpg" },
      { src: "assets/images_galeries/nightmares/1000031495.jpg" },
+     { src: "assets/images_galeries/nightmares/1000031518.jpg" },
     { src: "assets/images_galeries/nightmares/1000031077.jpg" }
 
 
